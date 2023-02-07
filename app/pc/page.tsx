@@ -1,5 +1,3 @@
-
-
 import ProductItem from "@/components/productItem";
 
 async function getPc() {
@@ -29,6 +27,7 @@ export default async function Pc() {
 				{data.map((item: Props) => (
 					<ProductItem
 						key={item.id}
+						id={item.id}
 						url={item.url}
 						name={item.name}
 						price={item.price}

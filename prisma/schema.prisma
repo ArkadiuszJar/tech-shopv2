@@ -23,7 +23,12 @@ model Pc {
   producent String
   name  String
   price Int
+  prevPrice Int?
   url   String
+  screen Int?
+  cpu    String?
+  ram    Int?
+  gpu    String?
 }
 
 model Phones {
@@ -32,6 +37,9 @@ model Phones {
   name  String
   price Int
   url   String
+  screen Int?
+  cpu    String?
+  ram    Int?
 }
 
 model Gaming {
@@ -56,6 +64,7 @@ model Tv {
   name  String
   price Int
   url   String
+  screen Int?
 }
 
 model Accessories {

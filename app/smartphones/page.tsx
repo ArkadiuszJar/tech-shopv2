@@ -27,6 +27,7 @@ export default async function Smartphones() {
 				{data.map((item: Props) => (
 					<ProductItem
 						key={item.id}
+						id={item.id}
 						url={item.url}
 						name={item.name}
 						price={item.price}

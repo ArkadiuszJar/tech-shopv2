@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const CategoryList = () => {
 	return (
-		<div className="bg-blue-900 pt-2 sticky top-0">
+		<div className="bg-blue-900 pt-2 sticky top-0 z-50">
 			<ul className="flex gap-2 justify-center">
 				<li>
 					<Link href="/pc">
