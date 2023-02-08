@@ -1,4 +1,4 @@
-import ProductItem from "@/components/productItem";
+import ProductItemAudio from "@/components/productItemAudio";
 
 async function getProducts() {
 	const res = await fetch(`${process.env.BASE_URL}/api/getAudio`);
@@ -25,7 +25,7 @@ export default async function Audio() {
 			<h1 className="text-xl p-4">Audio</h1>
 			<div className="flex flex-wrap w-2/3 justify-center">
 				{data.map((item: Props) => (
-					<ProductItem
+					<ProductItemAudio
 						key={item.id}
 						id={item.id}
 						url={item.url}

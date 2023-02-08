@@ -1,4 +1,4 @@
-import ProductItem from "@/components/productItem";
+import ProductItemSmarthome from "@/components/productItemSmarthome";
 
 async function getProducts() {
 	const res = await fetch(`${process.env.BASE_URL}/api/getSmarthome`);
@@ -25,8 +25,9 @@ export default async function Smarthome() {
 			<h1 className="text-xl p-4">Smarthome</h1>
 			<div className="flex flex-wrap w-2/3 justify-center">
 				{data.map((item: Props) => (
-					<ProductItem
+					<ProductItemSmarthome
 						key={item.id}
+						id={item.id}
 						url={item.url}
 						name={item.name}
 						price={item.price}

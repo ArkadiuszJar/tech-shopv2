@@ -36,7 +36,7 @@ const ProductItem = ({ url, name, price, producent, id }: Props) => {
 
 	return (
 		<div className="p-2 m-2 rounded-xl w-44 border-2 border-transparent hover:border-slate-300 flex flex-col justify-between hover:scale-105 transition-all">
-			<Link href={`/${id}`}>
+			<Link href={`/aod/${id}`}>
 				<div>
 					<Image
 						src={url}
@@ -56,9 +56,7 @@ const ProductItem = ({ url, name, price, producent, id }: Props) => {
 					height={20}
 					className="cursor-pointer"
 					alt="add to cart icon"
-					onClick={() => {
-						addToCart({ url, name, price, producent, id });
-					}}
+					onClick={() => addToCart({ url, name, price, producent, id })}
 				/>
 			</div>
 		</div>

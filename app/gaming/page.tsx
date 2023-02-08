@@ -1,4 +1,4 @@
-import ProductItem from "@/components/productItem";
+import ProductItemGaming from "@/components/productItemGaming";
 
 async function getProducts() {
 	const res = await fetch(`${process.env.BASE_URL}/api/getGaming`);
@@ -26,7 +26,7 @@ export default async function Gaming() {
 			<h1 className="text-xl p-4">Gaming</h1>
 			<div className="flex flex-wrap w-2/3 justify-center">
 				{data.map((item: Props) => (
-					<ProductItem
+					<ProductItemGaming
 						key={item.id}
 						id={item.id}
 						url={item.url}
