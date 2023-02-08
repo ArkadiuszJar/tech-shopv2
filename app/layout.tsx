@@ -1,8 +1,12 @@
+"use client";
+
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import CategoryList from "@/components/categoryList";
 import { Montserrat } from "@next/font/google";
 import Footer from "@/components/footer";
+import { Providers } from "./provider";
+
 
 const montserrat = Montserrat({
 	weight: ["300", "400", "500", "600", "700"],
@@ -14,6 +18,7 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	
 	return (
 		<html lang="en">
 			{/*
@@ -22,10 +27,12 @@ export default function RootLayout({
       */}
 			<head />
 			<body className={`${montserrat.className}`}>
-				<Navbar />
-				<CategoryList />
-				{children}
-				<Footer />
+				<Providers>
+					<Navbar />
+					<CategoryList />
+					{children}
+					<Footer />
+				</Providers>
 			</body>
 		</html>
 	);

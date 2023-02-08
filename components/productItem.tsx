@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useDispatch } from "react-redux/es/exports";
+import { increment } from "@/slices/cartSlice";
 
 type Props = {
 	producent: string;
@@ -34,6 +36,9 @@ const ProductItem = ({ url, name, price, producent, id }: Props) => {
 		}
 	};
 
+	const dispatch = useDispatch();
+	
+
 	return (
 		<div className="p-2 m-2 rounded-xl w-44 border-2 border-transparent hover:border-slate-300 flex flex-col justify-between hover:scale-105 transition-all">
 			<Link href={`/${id}`}>
@@ -58,6 +63,7 @@ const ProductItem = ({ url, name, price, producent, id }: Props) => {
 					alt="add to cart icon"
 					onClick={() => {
 						addToCart({ url, name, price, producent, id });
+						dispatch(increment());
 					}}
 				/>
 			</div>

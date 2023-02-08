@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { useDispatch } from "react-redux/es/exports";
+import { decrement } from "@/slices/cartSlice";
 
 type Props = {
 	url: string;
@@ -24,7 +26,7 @@ async function deleteItem(id: number) {
 
 const CartItem = ({ url, name, price, id }: Props) => {
 	const [visible, setVisible] = useState("block");
-
+	const dispatch = useDispatch();
 	return (
 		<div
 			className={String.raw`flex items-center justify-between w-3/6 px-4 my-2 border-2 rounded-xl ${visible}`}
@@ -44,6 +46,7 @@ const CartItem = ({ url, name, price, id }: Props) => {
 					onClick={() => {
 						deleteItem(id);
 						setVisible("hidden");
+						dispatch(decrement(price));
 					}}
 				/>
 			</div>

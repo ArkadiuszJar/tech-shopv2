@@ -1,6 +1,23 @@
 import Link from "next/link";
+import { useSelector } from "react-redux/es/exports";
+import { RootState } from "@/store/store";
+import { useDispatch } from "react-redux/es/exports";
+import { fetchCartData } from "@/slices/cartSlice";
+import { useEffect, useRef } from "react";
+import { AppDispatch } from "@/store/store";
 
 const Navbar = () => {
+	const cartRef = useRef(false);
+	const dispatch = useDispatch<AppDispatch>();
+
+	useEffect(() => {
+		if (cartRef.current === false) {
+			dispatch(fetchCartData());
+		}
+		cartRef.current = true;
+	}, []);
+
+	const { totalItems } = useSelector((state: RootState) => state.cart);
 	return (
 		<nav className="py-2 flex justify-center">
 			<div className="flex items-center gap-4 justify-between w-3/5">
@@ -22,8 +39,13 @@ const Navbar = () => {
 						</button>
 					</Link>
 					<Link href="/cart">
-						<button className="px-8 py-2 border-2 border-blue-800 rounded-full bg-blue-700 text-white font-medium hover:bg-blue-800">
+						<button className="px-8 py-2 border-2 border-blue-800 rounded-full bg-blue-700 text-white font-medium hover:bg-blue-800 relative">
 							Cart
+							{totalItems > 0 ? (
+								<p className=" rounded-full bg-green-600 px-3 py-1 absolute -right-5 -bottom-2">
+									{totalItems}
+								</p>
+							) : null}
 						</button>
 					</Link>
 				</div>

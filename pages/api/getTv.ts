@@ -7,7 +7,11 @@ export default async function handler(
 	res: NextApiResponse
 ) {
 	try {
-		const data = await prisma.tv.findMany();
+		const data = await prisma.tv.findMany({
+			orderBy: {
+				id: "asc",
+			},
+		});
 		return res.status(200).json(data);
 	} catch (err) {
 		return res.status(500).json(err);
