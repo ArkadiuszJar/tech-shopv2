@@ -1,4 +1,5 @@
 import ProductItemGaming from "@/components/productItemGaming";
+import Image from "next/image";
 
 async function getProducts() {
 	const res = await fetch(`${process.env.BASE_URL}/api/getGaming`);
@@ -23,8 +24,14 @@ export default async function Gaming() {
 	const data = await getProducts();
 	return (
 		<main className="flex justify-center flex-col items-center">
-			<h1 className="text-xl p-4">Gaming</h1>
-			<div className="flex flex-wrap w-2/3 justify-center">
+			<Image
+				src="/gamingbanner.svg"
+				width={2200}
+				height={100}
+				alt=""
+				className="lg:w-2/3 lg:my-8 lg:rounded-lg"
+			/>
+			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{data.map((item: Props) => (
 					<ProductItemGaming
 						key={item.id}

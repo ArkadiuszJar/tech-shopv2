@@ -16,6 +16,7 @@ const initialState = {
 	entities: [],
 	totalItems: 0,
 	totalPrice: 0,
+	status: "loading",
 } as any;
 
 const cartSlice = createSlice({
@@ -33,12 +34,14 @@ const cartSlice = createSlice({
 	extraReducers: (builder) => {
 		builder.addCase(fetchCartData.fulfilled, (state, action) => {
 			state.entities = [];
+
 			state.entities.push(...action.payload);
 			state.totalItems = state.entities.length;
 			state.totalPrice = action.payload.reduce(
 				(acc: number, item: any) => acc + item.price,
 				0
 			);
+			state.status = "succeeded";
 		});
 	},
 });

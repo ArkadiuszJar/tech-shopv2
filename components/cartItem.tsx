@@ -29,10 +29,16 @@ const CartItem = ({ url, name, price, id }: Props) => {
 	const dispatch = useDispatch();
 	return (
 		<div
-			className={String.raw`flex items-center justify-between w-3/6 px-4 my-2 border-2 rounded-xl ${visible}`}
+			className={String.raw`flex items-center lg:justify-between lg:w-3/6 sm:w-11/12 w-11/12 px-4 my-2 border-2 rounded-xl ${visible} lg:flex-nowrap flex-wrap justify-center`}
 		>
 			<div className="flex items-center gap-4">
-				<Image src={url} width={100} height={100} alt="product image" />
+				<Image
+					src={url}
+					width={100}
+					height={100}
+					alt="product image"
+					className="lg:w-auto w-15"
+				/>
 				<p className="text-xl">{name}</p>
 			</div>
 			<div className="flex gap-4">

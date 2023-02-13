@@ -4,7 +4,7 @@ type Props = {
 
 const CategoryBtn = ({ title }: Props) => {
 	return (
-		<div className="px-4 py-2 text-white hover:bg-white hover:rounded-t-md hover:text-blue-900">
+		<div className="px-4 py-2 text-white hover:bg-white hover:rounded-t-md hover:text-blue-900 transition-all">
 			<p>{title}</p>
 		</div>
 	);

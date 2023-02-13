@@ -3,11 +3,11 @@ import Link from "next/link";
 
 const CategoryList = () => {
 	return (
-		<div className="bg-blue-900 pt-2 sticky top-0 z-50">
-			<ul className="flex gap-2 justify-center">
+		<div className="bg-blue-900 pt-2">
+			<ul className="flex gap-2 justify-center flex-wrap">
 				<li>
 					<Link href="/pc">
-						<CategoryBtn title="Laptops and PC" />
+						<CategoryBtn title="PC" />
 					</Link>
 				</li>
 				<li>

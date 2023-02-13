@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux/es/exports";
 import { increment } from "@/slices/cartSlice";
+import { show, hide } from "@/slices/alertSlice";
 
 type Props = {
 	producent: string;
@@ -61,6 +62,10 @@ const ProductItem = ({ url, name, price, producent, id }: Props) => {
 					onClick={() => {
 						addToCart({ url, name, price, producent, id });
 						dispatch(increment());
+						dispatch(show());
+						setTimeout(() => {
+							dispatch(hide());
+						}, 1500);
 					}}
 				/>
 			</div>
