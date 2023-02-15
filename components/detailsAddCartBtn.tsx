@@ -38,7 +38,7 @@ const DetailsAddCartBtn = ({ url, name, price, producent, id }: Props) => {
 	};
 	return (
 		<button
-			className="px-8 py-3 rounded-full bg-green-500 text-white text-sm flex items-center gap-2"
+			className="px-8 py-3 rounded-full bg-green-500 hover:bg-green-700 transition-colors text-white text-sm flex items-center gap-2"
 			onClick={() => {
 				addToCart({ url, name, price, producent, id });
 				dispatch(increment());

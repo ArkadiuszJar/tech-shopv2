@@ -37,6 +37,7 @@ model Phones {
   name  String
   price Int
   url   String
+  prevPrice Int?
   screen Int?
   cpu    String?
   ram    Int?
@@ -48,6 +49,12 @@ model Gaming {
   name  String
   price Int
   url   String
+   prevPrice Int?
+  type  String?
+  disc  String?
+  cpu    String?
+  screen Int?
+  ram    Int?
 }
 
 model Audio {
@@ -56,6 +63,10 @@ model Audio {
   name  String
   price Int
   url   String
+   prevPrice Int?
+   comunication String?
+   microphone String?
+   anc String?
 }
 
 model Tv {
@@ -65,6 +76,7 @@ model Tv {
   price Int
   url   String
   screen Int?
+   prevPrice Int?
 }
 
 model Accessories {
@@ -73,6 +85,10 @@ model Accessories {
   name  String
   price Int
   url   String
+   prevPrice Int?
+   type String?
+   interface String?
+   capacity String?
 }
 
 model Smarthome {
@@ -81,4 +97,5 @@ model Smarthome {
   name  String
   price Int
   url   String
+   prevPrice Int?
 }
