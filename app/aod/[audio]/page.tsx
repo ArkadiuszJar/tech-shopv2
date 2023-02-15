@@ -1,4 +1,5 @@
 import Image from "next/image";
+import DetailsAddCartBtn from "@/components/detailsAddCartBtn";
 
 type Props = {
 	params: {
@@ -50,15 +51,13 @@ export default async function Product({ params }: Props) {
 									</p>
 									<p className="text-2xl">{product.price}.00 $</p>
 								</div>
-								<button className="px-8 py-3 rounded-full bg-green-500 text-white text-sm flex items-center gap-2">
-									<Image
-										src="/addcartwhite.svg"
-										width={15}
-										height={10}
-										alt="add to cart icon"
-									/>
-									Add to cart
-								</button>
+								<DetailsAddCartBtn
+									url={product.url}
+									name={product.name}
+									price={product.price}
+									producent={product.producent}
+									id={product.id}
+								/>
 							</div>
 						</div>
 					</div>
