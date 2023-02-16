@@ -37,12 +37,9 @@ export default async function Product({ params }: Props) {
 						</div>
 						<div className="flex justify-between py-6 px-4 mb-2 border-2 rounded-xl">
 							<div className="flex flex-col justify-between py-2 font-semibold gap-2">
-								<p className="text-xs">CPU: {product.cpu}</p>
-								<p className="text-xs">GPU: {product.gpu}</p>
-								<p className="text-xs">RAM: {product.ram} GB</p>
-								{product.screen ? (
-									<p className="text-xs">Screen: {product.screen} '</p>
-								) : null}
+								<p className="text-xs">Screen: {product.screen} '</p>
+								<p className="text-xs">Type: {product.type}</p>
+								<p className="text-xs">Resolution: {product.resolution}</p>
 							</div>
 							<div className="items-end gap-4 flex flex-col ">
 								<div className="flex items-center gap-2">

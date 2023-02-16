@@ -76,7 +76,9 @@ model Tv {
   price Int
   url   String
   screen Int?
-   prevPrice Int?
+  prevPrice Int?
+  type String?
+  resolution String?
 }
 
 model Accessories {
@@ -98,4 +100,7 @@ model Smarthome {
   price Int
   url   String
    prevPrice Int?
+   comunication String?
+   resolution String?
+   type String?
 }
