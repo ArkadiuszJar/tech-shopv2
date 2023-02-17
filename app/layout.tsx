@@ -5,7 +5,8 @@ import Navbar from "@/components/navbar";
 import CategoryList from "@/components/categoryList";
 import { Montserrat } from "@next/font/google";
 import Footer from "@/components/footer";
-import { Providers } from "./provider";
+import { Provider } from "react-redux";
+import { store } from "../store/store";
 import Alert from "@/components/alert";
 
 const montserrat = Montserrat({
@@ -28,7 +29,7 @@ export default function RootLayout({
 			<body
 				className={`${montserrat.className} flex flex-col justify-between h-screen`}
 			>
-				<Providers>
+				<Provider store={store}>
 					<div>
 						<Navbar />
 						<CategoryList />
@@ -36,7 +37,7 @@ export default function RootLayout({
 					{children}
 					<Alert />
 					<Footer />
-				</Providers>
+				</Provider>
 			</body>
 		</html>
 	);
