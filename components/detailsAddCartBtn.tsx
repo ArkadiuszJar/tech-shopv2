@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 import { useDispatch } from "react-redux/es/exports";
 import { increment } from "@/slices/cartSlice";
 import { show, hide } from "@/slices/alertSlice";

@@ -26,10 +26,11 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
 			<head />
-			<Provider store={store}>
-				<body
-					className={`${montserrat.className} flex flex-col justify-between h-screen`}
-				>
+
+			<body
+				className={`${montserrat.className} flex flex-col justify-between h-screen`}
+			>
+				<Provider store={store}>
 					<div>
 						<Navbar />
 						<CategoryList />
@@ -37,8 +38,8 @@ export default function RootLayout({
 					{children}
 					<Alert />
 					<Footer />
-				</body>
-			</Provider>
+				</Provider>
+			</body>
 		</html>
 	);
 }
