@@ -22,7 +22,7 @@ export default async function Product({ params }: Props) {
 	return (
 		<div>
 			<div className="flex justify-center">
-				<div className="flex flex-wrap justify-center w-7/12">
+				<div className="flex flex-wrap justify-center lg:w-7/12">
 					<Image
 						src={product.url}
 						width={550}
@@ -32,22 +32,24 @@ export default async function Product({ params }: Props) {
 					/>
 					<div className="grow">
 						<div className="flex flex-col items-center">
-							<h1 className="text-2xl font-medium">{product.name}</h1>
+							<h1 className="text-2xl font-medium text-center">
+								{product.name}
+							</h1>
 							<p className="text-sm mb-4">Producent: {product.producent}</p>
 						</div>
-						<div className="flex justify-between py-6 px-4 mb-2 border-2 rounded-xl">
+						<div className="flex justify-between py-6 px-4 mb-2 mx-2 border-2 rounded-xl">
 							<div className="flex flex-col justify-between py-2 font-semibold gap-2">
-								<p className="text-xs">Type: {product.type}</p>
+								<p className="text-sm">Type: {product.type}</p>
 								{product.interface ? (
-									<p className="text-xs">Interface: {product.interface}</p>
+									<p className="text-sm">Interface: {product.interface}</p>
 								) : null}
 
 								{product.capacity ? (
-									<p className="text-xs">Capacity: {product.capacity} GB</p>
+									<p className="text-sm">Capacity: {product.capacity} GB</p>
 								) : null}
 
 								{product.screen ? (
-									<p className="text-xs">Screen: {product.screen} '</p>
+									<p className="text-sm">Screen: {product.screen} '</p>
 								) : null}
 							</div>
 							<div className="items-end gap-4 flex flex-col ">

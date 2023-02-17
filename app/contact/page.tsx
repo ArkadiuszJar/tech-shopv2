@@ -3,14 +3,14 @@
 export default function Contact() {
 	return (
 		<main className="flex justify-center flex-col items-center">
-			<p className="w-5/12 my-4 text-justify  text-black text-lg p-4 rounded-lg">
+			<p className="lg:w-5/12 my-4 text-justify  text-black text-lg p-4 rounded-lg">
 				Thank you for your interest in contacting us. We value your feedback and
 				suggestions, and we would love to hear from you.
 			</p>
 			<form
 				action="https://formsubmit.co/arek.aaf@gmail.com"
 				method="post"
-				className="flex-col flex gap-2 w-1/3"
+				className="flex-col flex gap-2 lg:w-1/3"
 			>
 				<label htmlFor="title" className="font-semibold">
 					Title

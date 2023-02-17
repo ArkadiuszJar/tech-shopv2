@@ -26,12 +26,12 @@ const Navbar = () => {
 				</Link>
 				<div className="flex gap-4">
 					<Link href="/contact">
-						<button className="px-4 py-1 rounded-2xl border-2 text-blue-800 border-blue-700  font-medium hover:scale-105 transition-all">
+						<button className="px-4 py-1 rounded-md border-2 text-gray-800 border-gray-700 font-medium hover:scale-105 transition-all">
 							Contact
 						</button>
 					</Link>
 					<Link href="/cart">
-						<button className="px-4 py-1 rounded-2xl border-2 text-blue-800 border-blue-700  font-medium hover:scale-105 transition-all relative">
+						<button className="px-4 py-1 rounded-md border-2 text-gray-800 border-gray-700  font-medium hover:scale-105 transition-all relative">
 							Cart
 							{totalItems > 0 ? (
 								<p className=" rounded-full bg-green-600 px-2.5 py-1 absolute -right-5 -bottom-2 text-sm text-white">

@@ -28,7 +28,7 @@ export default async function Smartphones() {
 				width={2200}
 				height={100}
 				alt=""
-				className="lg:w-2/3 lg:my-8 lg:rounded-lg"
+				className="lg:w-2/3 lg:my-8 lg:rounded-lg my-4"
 			/>
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{data.map((item: Props) => (
