@@ -18,7 +18,6 @@ const initialState = {
 	entities: [],
 	totalItems: 0,
 	totalPrice: 0,
-	status: "loading",
 } as any;
 
 const cartSlice = createSlice({
