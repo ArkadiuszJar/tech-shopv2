@@ -31,11 +31,7 @@ const ProductItem = ({ url, name, price, producent, id, path }: Props) => {
 	}
 
 	const addToCart = async (data: Props) => {
-		try {
-			create(data);
-		} catch (err) {
-			console.log(err);
-		}
+		await create(data);
 	};
 
 	const dispatch = useDispatch();

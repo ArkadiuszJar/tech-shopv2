@@ -39,6 +39,7 @@ export default async function Pc() {
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="pcd"
 					/>
 				))}
 			</div>

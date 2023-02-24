@@ -12,16 +12,12 @@ type Props = {
 };
 
 async function deleteItem(id: number) {
-	try {
-		fetch(`/api/item/${id}`, {
-			method: "DELETE",
-			headers: {
-				"Content-Type": "application/json",
-			},
-		});
-	} catch (err) {
-		console.log(err);
-	}
+	await fetch(`/api/item/${id}`, {
+		method: "DELETE",
+		headers: {
+			"Content-Type": "application/json",
+		},
+	});
 }
 
 const CartItem = ({ url, name, price, id }: Props) => {

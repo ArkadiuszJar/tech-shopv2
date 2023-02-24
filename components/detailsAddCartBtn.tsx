@@ -31,12 +31,9 @@ const DetailsAddCartBtn = ({ url, name, price, producent, id }: Props) => {
 	}
 
 	const addToCart = async (data: Props) => {
-		try {
-			create(data);
-		} catch (err) {
-			console.log(err);
-		}
+		await create(data);
 	};
+
 	return (
 		<button
 			className="px-8 py-3 rounded-full bg-green-500 hover:bg-green-700 transition-colors text-white text-sm flex items-center gap-2"
