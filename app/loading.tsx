@@ -17,8 +17,8 @@ export default function Loading() {
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{Array(5)
 					.fill(0)
-					.map((_, i) => (
-						<ItemLoader key={i} />
+					.map(() => (
+						<ItemLoader key={1} />
 					))}
 			</div>
 
@@ -27,8 +27,8 @@ export default function Loading() {
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{Array(5)
 					.fill(0)
-					.map((_, i) => (
-						<ItemLoader key={i} />
+					.map(() => (
+						<ItemLoader key={1} />
 					))}
 			</div>
 
@@ -37,8 +37,8 @@ export default function Loading() {
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{Array(5)
 					.fill(0)
-					.map((_, i) => (
-						<ItemLoader key={i} />
+					.map(() => (
+						<ItemLoader key={1} />
 					))}
 			</div>
 
@@ -47,8 +47,8 @@ export default function Loading() {
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{Array(5)
 					.fill(0)
-					.map((_, i) => (
-						<ItemLoader key={i} />
+					.map(() => (
+						<ItemLoader key={1} />
 					))}
 			</div>
 
@@ -57,8 +57,8 @@ export default function Loading() {
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{Array(5)
 					.fill(0)
-					.map((_, i) => (
-						<ItemLoader key={i} />
+					.map(() => (
+						<ItemLoader key={1} />
 					))}
 			</div>
 
@@ -67,8 +67,8 @@ export default function Loading() {
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{Array(5)
 					.fill(0)
-					.map((_, i) => (
-						<ItemLoader key={i} />
+					.map(() => (
+						<ItemLoader key={1} />
 					))}
 			</div>
 
@@ -77,8 +77,8 @@ export default function Loading() {
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{Array(5)
 					.fill(0)
-					.map((_, i) => (
-						<ItemLoader key={i} />
+					.map(() => (
+						<ItemLoader key={1} />
 					))}
 			</div>
 		</main>
