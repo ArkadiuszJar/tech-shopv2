@@ -40,6 +40,7 @@ export default async function Gaming() {
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="gd"
 					/>
 				))}
 			</div>

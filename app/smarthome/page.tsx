@@ -39,7 +39,7 @@ export default async function Smarthome() {
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
-						path="pd"
+						path="shd"
 					/>
 				))}
 			</div>

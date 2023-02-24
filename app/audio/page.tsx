@@ -39,6 +39,7 @@ export default async function Audio() {
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="aod"
 					/>
 				))}
 			</div>

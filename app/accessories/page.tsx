@@ -39,6 +39,7 @@ export default async function Accessories() {
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="ad"
 					/>
 				))}
 			</div>
