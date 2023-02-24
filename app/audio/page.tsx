@@ -1,4 +1,4 @@
-import ProductItemAudio from "@/components/productItemAudio";
+import ProductItem from "@/components/productItem";
 import Image from "next/image";
 
 async function getProducts() {
@@ -32,7 +32,7 @@ export default async function Audio() {
 			/>
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{data.map((item: Props) => (
-					<ProductItemAudio
+					<ProductItem
 						key={item.id}
 						id={item.id}
 						url={item.url}

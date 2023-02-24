@@ -14,7 +14,10 @@ type Props = {
 	id: number;
 };
 
-const ProductItem = ({ url, name, price, producent, id }: Props) => {
+const ProductItem = (
+	{ url, name, price, producent, id }: Props,
+	path: string
+) => {
 	async function create(data: Props) {
 		try {
 			await fetch(`/api/addCart`, {
@@ -41,7 +44,7 @@ const ProductItem = ({ url, name, price, producent, id }: Props) => {
 
 	return (
 		<div className="p-2 m-2 rounded-xl w-44 border-2 border-transparent hover:border-slate-300 flex flex-col justify-between hover:scale-105 transition-all">
-			<Link href={`/${id}`}>
+			<Link href={`/${path}/${id}`}>
 				<div>
 					<Image
 						src={url}

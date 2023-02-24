@@ -1,4 +1,4 @@
-import ProductItemPhones from "@/components/productItemPhones";
+import ProductItem from "@/components/productItem";
 import Image from "next/image";
 
 async function getProducts() {
@@ -32,13 +32,14 @@ export default async function Smartphones() {
 			/>
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{data.map((item: Props) => (
-					<ProductItemPhones
+					<ProductItem
 						key={item.id}
 						id={item.id}
 						url={item.url}
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="pd"
 					/>
 				))}
 			</div>

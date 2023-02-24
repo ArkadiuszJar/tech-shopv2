@@ -1,12 +1,6 @@
 import Image from "next/image";
 import HomeCatBanner from "@/components/homeCatBaner";
 import ProductItem from "@/components/productItem";
-import ProductItemSP from "@/components/productItemPhones";
-import ProductItemGM from "@/components/productItemGaming";
-import ProductItemAC from "@/components/productItemAccessories";
-import ProductItemAU from "@/components/productItemAudio";
-import ProductItemTV from "@/components/productItemTv";
-import ProductItemSH from "@/components/productItemSmarthome";
 
 async function getPc() {
 	const res = await fetch(`${process.env.BASE_URL}/api/getPc`);
@@ -102,6 +96,7 @@ export default async function Home() {
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="pcd"
 					/>
 				))}
 			</div>
@@ -110,13 +105,14 @@ export default async function Home() {
 
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{dataSP.slice(0, 5).map((item: Props) => (
-					<ProductItemSP
+					<ProductItem
 						key={item.id}
 						id={item.id}
 						url={item.url}
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="pd"
 					/>
 				))}
 			</div>
@@ -125,13 +121,14 @@ export default async function Home() {
 
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{dataGM.slice(0, 5).map((item: Props) => (
-					<ProductItemGM
+					<ProductItem
 						key={item.id}
 						id={item.id}
 						url={item.url}
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="gd"
 					/>
 				))}
 			</div>
@@ -140,13 +137,14 @@ export default async function Home() {
 
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{dataAC.slice(0, 5).map((item: Props) => (
-					<ProductItemAC
+					<ProductItem
 						key={item.id}
 						id={item.id}
 						url={item.url}
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="ad"
 					/>
 				))}
 			</div>
@@ -155,13 +153,14 @@ export default async function Home() {
 
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{dataTV.slice(0, 5).map((item: Props) => (
-					<ProductItemTV
+					<ProductItem
 						key={item.id}
 						id={item.id}
 						url={item.url}
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="td"
 					/>
 				))}
 			</div>
@@ -170,13 +169,14 @@ export default async function Home() {
 
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{dataAU.slice(0, 5).map((item: Props) => (
-					<ProductItemAU
+					<ProductItem
 						key={item.id}
 						id={item.id}
 						url={item.url}
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="aod"
 					/>
 				))}
 			</div>
@@ -185,13 +185,14 @@ export default async function Home() {
 
 			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
 				{dataSH.slice(0, 5).map((item: Props) => (
-					<ProductItemSH
+					<ProductItem
 						key={item.id}
 						id={item.id}
 						url={item.url}
 						name={item.name}
 						price={item.price}
 						producent={item.producent}
+						path="shd"
 					/>
 				))}
 			</div>
