@@ -1,6 +1,6 @@
 import ItemLoader from "./itemLoader";
 
-var rand = require("csprng");
+let rand = require("csprng");
 
 const HomeLoader = () => {
 	return (
