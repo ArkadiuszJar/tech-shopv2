@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useDispatch } from "react-redux/es/exports";
 import { increment } from "@/slices/cartSlice";
 import { show, hide } from "@/slices/alertSlice";
+import { addToCart } from "@/adapters/api/addToCart";
 
 type Props = {
 	producent: string;
@@ -16,26 +17,7 @@ type Props = {
 };
 
 const ProductItem = ({ url, name, price, producent, id, path }: Props) => {
-	async function create(data: Props) {
-		try {
-			await fetch(`/api/addCart`, {
-				body: JSON.stringify(data),
-				headers: {
-					"Content-Type": "application/json",
-				},
-				method: "POST",
-			});
-		} catch (err) {
-			console.log(err);
-		}
-	}
-
-	const addToCart = async (data: Props) => {
-		await create(data);
-	};
-
 	const dispatch = useDispatch();
-
 	return (
 		<div className="p-2 m-2 rounded-xl w-44 border-2 border-transparent hover:border-slate-300 flex flex-col justify-between hover:scale-105 transition-all">
 			<Link href={`/details/${path}/${id}`}>

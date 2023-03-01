@@ -1,13 +1,6 @@
 import ProductItem from "@/components/productItem";
 import Image from "next/image";
-
-async function getProducts() {
-	const res = await fetch(`${process.env.BASE_URL}/api/getGaming`);
-	if (!res.ok) {
-		console.log(res);
-	}
-	return res.json();
-}
+import { getProducts } from "@/adapters/api/getProducts";
 
 type Props = {
 	data: any;
@@ -21,7 +14,7 @@ type Props = {
 };
 
 export default async function Gaming() {
-	const data = await getProducts();
+	const data = await getProducts("getGaming");
 	return (
 		<main className="flex justify-center flex-col items-center">
 			<Image

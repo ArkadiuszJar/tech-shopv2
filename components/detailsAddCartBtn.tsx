@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useDispatch } from "react-redux/es/exports";
 import { increment } from "@/slices/cartSlice";
 import { show, hide } from "@/slices/alertSlice";
+import { addToCart } from "@/adapters/api/addToCart";
 
 type Props = {
 	producent: string;
@@ -16,23 +17,6 @@ type Props = {
 
 const DetailsAddCartBtn = ({ url, name, price, producent, id }: Props) => {
 	const dispatch = useDispatch();
-	async function create(data: Props) {
-		try {
-			await fetch(`/api/addCart`, {
-				body: JSON.stringify(data),
-				headers: {
-					"Content-Type": "application/json",
-				},
-				method: "POST",
-			});
-		} catch (err) {
-			console.log(err);
-		}
-	}
-
-	const addToCart = async (data: Props) => {
-		await create(data);
-	};
 
 	return (
 		<button

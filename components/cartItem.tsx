@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useDispatch } from "react-redux/es/exports";
 import { decrement } from "@/slices/cartSlice";
+import { deleteItem } from "@/adapters/api/deleteItem";
 
 type Props = {
 	url: string;
@@ -10,15 +11,6 @@ type Props = {
 	price: number;
 	id: number;
 };
-
-async function deleteItem(id: number) {
-	await fetch(`/api/item/${id}`, {
-		method: "DELETE",
-		headers: {
-			"Content-Type": "application/json",
-		},
-	});
-}
 
 const CartItem = ({ url, name, price, id }: Props) => {
 	const [visible, setVisible] = useState("block");

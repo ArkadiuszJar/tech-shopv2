@@ -1,5 +1,6 @@
 import ItemPage from "@/components/layouts/layout";
 import ItemInfo from "@/components/itemInfo";
+import { getProducts } from "@/adapters/api/getProducts";
 
 type Props = {
 	params: {
@@ -8,15 +9,8 @@ type Props = {
 };
 
 export default async function Product({ params }: Props) {
-	async function getProducts() {
-		const res = await fetch(`${process.env.BASE_URL}/api/getAudio`);
-		if (!res.ok) {
-			console.log(res);
-		}
-		return res.json();
-	}
 	const { audio } = params;
-	const data = await getProducts();
+	const data = await getProducts("getAudio");
 	const product = data[Number(audio) - 1];
 
 	return (
