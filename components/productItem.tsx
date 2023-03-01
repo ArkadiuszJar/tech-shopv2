@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux/es/exports";
 import { increment } from "@/slices/cartSlice";
 import { show, hide } from "@/slices/alertSlice";
 import { addToCart } from "@/adapters/api/addToCart";
+import { useAsync } from "@/hooks/useAsync";
 
 type Props = {
 	producent: string;
@@ -18,6 +19,10 @@ type Props = {
 
 const ProductItem = ({ url, name, price, producent, id, path }: Props) => {
 	const dispatch = useDispatch();
+	const { execute: attemptAddToCart, error } = useAsync(
+		() => addToCart({ producent, name, price, id, url }),
+		false
+	);
 	return (
 		<div className="p-2 m-2 rounded-xl w-44 border-2 border-transparent hover:border-slate-300 flex flex-col justify-between hover:scale-105 transition-all">
 			<Link href={`/details/${path}/${id}`}>
@@ -41,7 +46,7 @@ const ProductItem = ({ url, name, price, producent, id, path }: Props) => {
 					className="cursor-pointer"
 					alt="add to cart icon"
 					onClick={() => {
-						addToCart({ url, name, price, producent, id, path });
+						attemptAddToCart();
 						dispatch(increment());
 						dispatch(show());
 						setTimeout(() => {

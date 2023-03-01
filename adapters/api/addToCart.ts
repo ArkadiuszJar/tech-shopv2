@@ -23,4 +23,5 @@ async function create(data: Props) {
 
 export const addToCart = async (data: Props) => {
 	await create(data);
+	console.log("Added to cart");
 };
