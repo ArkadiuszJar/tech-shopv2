@@ -13,31 +13,29 @@ type Props = {
 };
 
 export default async function TV() {
-	const data = await getProducts("getTv");
-	if (!data) return <p>There is an error.</p>;
-	if (data)
-		return (
-			<main className="flex justify-center flex-col items-center">
-				<Image
-					src="/tvbanner.svg"
-					width={2200}
-					height={100}
-					alt=""
-					className="lg:w-2/3 lg:my-8 lg:rounded-lg"
-				/>
-				<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
-					{data.map((item: Props) => (
-						<ProductItem
-							key={item.id}
-							id={item.id}
-							url={item.url}
-							name={item.name}
-							price={item.price}
-							producent={item.producent}
-							path="td"
-						/>
-					))}
-				</div>
-			</main>
-		);
+	const data = await getProducts("getv");
+	return (
+		<main className="flex justify-center flex-col items-center">
+			<Image
+				src="/tvbanner.svg"
+				width={2200}
+				height={100}
+				alt=""
+				className="lg:w-2/3 lg:my-8 lg:rounded-lg"
+			/>
+			<div className="flex flex-wrap lg:w-2/3 sm:w-full justify-center">
+				{data.map((item: Props) => (
+					<ProductItem
+						key={item.id}
+						id={item.id}
+						url={item.url}
+						name={item.name}
+						price={item.price}
+						producent={item.producent}
+						path="td"
+					/>
+				))}
+			</div>
+		</main>
+	);
 }

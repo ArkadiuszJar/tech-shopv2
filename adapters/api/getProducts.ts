@@ -8,5 +8,7 @@ export async function getProducts(url: string) {
 	if (!res.ok) {
 		console.log(res);
 	}
-	return res.json();
+	if (res) {
+		throw new Error("Error");
+	}
 }
