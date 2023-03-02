@@ -7,21 +7,12 @@ type Props = {
 	path?: string;
 };
 
-async function create(data: Props) {
-	try {
-		await fetch(`/api/addCart`, {
-			body: JSON.stringify(data),
-			headers: {
-				"Content-Type": "application/json",
-			},
-			method: "POST",
-		});
-	} catch (err) {
-		console.log(err);
-	}
+export async function addToCart(data: Props) {
+	await fetch(`/api/addCart`, {
+		body: JSON.stringify(data),
+		headers: {
+			"Content-Type": "application/json",
+		},
+		method: "POST",
+	});
 }
-
-export const addToCart = async (data: Props) => {
-	await create(data);
-	console.log("Added to cart");
-};

@@ -23,7 +23,9 @@ const DetailsAddCartBtn = ({ url, name, price, producent, id }: Props) => {
 		() => addToCart({ producent, name, price, id, url }),
 		false
 	);
-
+	if (error) {
+		alert("Something went wrong");
+	}
 	return (
 		<button
 			className="px-8 py-3 rounded-full bg-green-500 hover:bg-green-700 transition-colors text-white text-sm flex items-center gap-2"

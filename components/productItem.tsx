@@ -23,6 +23,9 @@ const ProductItem = ({ url, name, price, producent, id, path }: Props) => {
 		() => addToCart({ producent, name, price, id, url }),
 		false
 	);
+	if (error) {
+		alert("Something went wrong");
+	}
 	return (
 		<div className="p-2 m-2 rounded-xl w-44 border-2 border-transparent hover:border-slate-300 flex flex-col justify-between hover:scale-105 transition-all">
 			<Link href={`/details/${path}/${id}`}>
