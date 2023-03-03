@@ -13,7 +13,7 @@ type Props = {
 };
 
 export default async function TV() {
-	const data = await getProducts("geTv");
+	const data = await getProducts("getTv");
 	return (
 		<main className="flex justify-center flex-col items-center">
 			<Image
